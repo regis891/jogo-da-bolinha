@@ -15,12 +15,21 @@ document.addEventListener('keydown', (event) => {
             break;
         case 'ArrowDown':
             if (posY < window.innerHeight - circle.offsetHeight)
-                posY = posY+ moveSpeed;
+                posY = posY + moveSpeed;
             break;
-            case 'ArrowLeft':
-                if (posX > 0)
-                posX = posX-moveSpeed;
+        case 'ArrowLeft':
+            if (posX > 0)
+                posX = posX - moveSpeed;
             break
-
+        case 'ArrowRight':
+            if (posX < window.innerwidth - circle.offsetwidth)
+                posX = posX + moveSpeed;
+            break;
     }
-})
+    updatecircleposition();
+});
+
+function updateCirclePosition () {
+    circle.style.left = `${posX}px`;
+    circle.style.top = `${posY}px`;
+}
